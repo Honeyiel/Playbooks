@@ -1,14 +1,27 @@
-all:
-  children:
-    servers:
-      hosts:
-        proxmox1:
-          ansible_host: 192.168.247.128
-          ansible_python_interpreter: /usr/bin/python3
-        proxmox2:
-          ansible_host: 192.168.247.130
-          ansible_python_interpreter: /usr/bin/python3
-        proxmox3:
-          ansible_host: 192.168.247.131
-          ansible_python_interpreter: /usr/bin/python3
-    ungrouped: {}
+
+- hosts: all
+
+  tasks:
+      - name: "Deploiement-VM-Proxmox1"
+        proxmox_kvm:
+            api_user    : root@pam
+            api_password: itescia
+            api_host    : 192.168.247.130
+            name        : ansibled1
+            node        : proxmox1
+
+      - name: "Deploiement-VM-Proxmox2"
+        proxmox_kvm:
+            api_user    : root@pam
+            api_password: itescia
+            api_host    : 192.168.247.128
+            name        : ansibled2
+            node        : proxmox2
+
+      - name: "Deploiement-VM-Proxmox3"
+        proxmox_kvm:
+            api_user    : root@pam
+            api_password: itescia
+            api_host    : 192.168.247.131
+            name        : ansibled3
+            node        : proxmox3
