@@ -1,0 +1,16 @@
+
+- hosts: all
+
+  vars:
+      api_user: root@pam 
+      api_password: itescia
+
+  tasks:
+   - name: "Backup avec snapshot"
+     proxmox_kvm:
+       api_user    : "{{api_user}}"
+       api_password: "{{api_password}}"
+       api_host: 192.168.247.130
+       name: TestUbuntu
+       node: proxmox1
+       lock: snapshot
