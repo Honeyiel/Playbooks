@@ -1,0 +1,12 @@
+
+- hosts: all
+  tasks:
+          - name: Add user
+            user: 
+             name: itesciadm 
+             state: present 
+             group: 'adm' 
+             home: '/home/itesciadm' 
+             shell: '/bin/bash'
+             password: '$6$giUmFnsMF/ebie$a39nx0s..NFWsZqBeZKsr3uqCasmrkezZdvTfV7NKLATYG.U9fsZdZTN1wpNZgijM9VFb2bLXCTytNDV5VGyu1' 
+             generate_ssh_key: yes 
