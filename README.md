@@ -18,13 +18,17 @@ Modify var username with the username you want :)
 For the password, you have to generate an encrypted password
 
 Download Whois if it didn't work because you didn't have the right package & Use this command: 
+```
 mkpasswd --method=sha-512
+```
 
 After this, you will prompt your password, copy the encrypted password and paste it on the line password, in user's section.
 
-Run this command with : ansible-playbook -i hosts.yaml  -u root AddUserOnProxmox.yaml -v
+Run this command with :
 
-
+```
+ ansible-playbook -i hosts.yaml  -u root AddUserOnProxmox.yaml -v
+```
 
 
 #### Alexia & Kevin
