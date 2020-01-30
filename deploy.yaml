@@ -9,6 +9,8 @@
             api_host    : 192.168.247.130
             name        : ansibled1
             node        : proxmox1
+            ide         : '{"ide0":"local:iso/ubuntu-18.04.3-live-server-amd64.iso,media=cdrom"}'
+
 
       - name: "Deploiement-VM-Proxmox2"
         proxmox_kvm:
@@ -17,6 +19,7 @@
             api_host    : 192.168.247.128
             name        : ansibled2
             node        : proxmox2
+            ide         : '{"ide0":"local:iso/ubuntu-18.04.3-live-server-amd64.iso,media=cdrom"}'
 
       - name: "Deploiement-VM-Proxmox3"
         proxmox_kvm:
@@ -25,3 +28,4 @@
             api_host    : 192.168.247.131
             name        : ansibled3
             node        : proxmox3
+            ide         : '{"ide0":"local:iso/ubuntu-18.04.3-live-server-amd64.iso,media=cdrom"}'
