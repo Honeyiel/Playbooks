@@ -1,5 +1,8 @@
 
 - hosts: all
+  
+  vars:
+      - 
 
   tasks:
       - name: "Deploiement-VM-Proxmox1"
@@ -10,8 +13,8 @@
             name        : ansibled1
             node        : proxmox1
             ide         : '{"ide0":"local:iso/ubuntu-18.04.3-live-server-amd64.iso,media=cdrom"}'
-
-
+            autostart   : yes
+            
       - name: "Deploiement-VM-Proxmox2"
         proxmox_kvm:
             api_user    : root@pam
@@ -20,6 +23,7 @@
             name        : ansibled2
             node        : proxmox2
             ide         : '{"ide0":"local:iso/ubuntu-18.04.3-live-server-amd64.iso,media=cdrom"}'
+            autostart   : yes
 
       - name: "Deploiement-VM-Proxmox3"
         proxmox_kvm:
@@ -29,3 +33,4 @@
             name        : ansibled3
             node        : proxmox3
             ide         : '{"ide0":"local:iso/ubuntu-18.04.3-live-server-amd64.iso,media=cdrom"}'
+            autostart   : yes
