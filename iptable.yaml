@@ -15,6 +15,7 @@
              destination_port: 22
              ctstate: NEW
              jump: ACCEPT
+             become: yes
 
           - name: Autorisation port 8006
             iptables:
@@ -23,4 +24,5 @@
              destination_port: 22
              ctstate: NEW
              jump: ACCEPT
+             become: yes
 
