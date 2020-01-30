@@ -1,0 +1,26 @@
+
+- hosts: all
+  tasks:
+          - name: Bloque 
+            iptables:
+             chain: INPUT
+             jump: DROP
+             protocol: tcp
+            become: yes
+
+          - name: Autorisation port 22
+            iptables:
+             chain: INPUT
+             protocol: tcp
+             destination_port: 22
+             ctstate: NEW
+             jump: ACCEPT
+
+          - name: Autorisation port 8006
+            iptables:
+             chain: INPUT
+             protocol: tcp
+             destination_port: 22
+             ctstate: NEW
+             jump: ACCEPT
+
