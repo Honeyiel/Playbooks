@@ -1,15 +1,17 @@
 
 - hosts: all
+  vars:
+   username: itesciadm
   tasks:
           - name: Add user
             user: 
-             name: itesciadm 
+             name: "{{username}}"
              state: present 
              groups: adm, sudo  
-             home: '/home/itesciadm' 
+             home: '/home/"{{username}}' 
              shell: '/bin/bash'
              password: '$6$giUmFnsMF/ebie$a39nx0s..NFWsZqBeZKsr3uqCasmrkezZdvTfV7NKLATYG.U9fsZdZTN1wpNZgijM9VFb2bLXCTytNDV5VGyu1' 
              generate_ssh_key: yes 
        
           - name : permission   
-            command: pveum useradd itesciadm@pam -group Administrateur -password itescia
+            command: pveum useradd "{{username}}"@pam -group Administrateur -password itescia
